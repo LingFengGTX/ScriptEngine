@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<default>
+  <software>
+    <welcome> 欢迎使用,如果你要针对某一目录保存快照，请单击菜单栏中的"操作"-"搜索.."，针对该目录中的文件进行批量相关处理请使用"操作"-"生成脚本"。如果要自定义处理操作，请在"操作"-"脚本动作设置.."进行自定义。
+    本定义文件适用于Script Engine 1.0.0.0</welcome>
+  </software>
+  <defines Version="1.0.0.0">
+    <Item Name="SelectedFolder" Comment="该宏代表搜索快照的原始目录。"/>
+    <Item Name="ShotFileName" Comment="该宏代表已搜素到的文件名。"/>
+    <Item Name="ShotFileNameTree" Comment="该宏代表目标文件的文件名(但不包括选择的目录)路径。"/>
+    <Item Name="ShotFileFullName" Comment="该宏代表已搜素到的文件名以及文件路径。"/>
+  </defines>
+  <Command Version="1.0.0.0">
+    <Item cmd="makedir" Comment="如果目标目录不存在则创建一个目录" ArgCount="1" ArgComment="参数一: 创建目录的路径" ArgExample="[Folder Path]"/>
+  <Item cmd="ifmove" Comment="如果目标已存在则不去移动目标。" ArgCount="2" ArgComment="参数一: 源文件名|参数二: 目标文件名"  ArgExample="[Source FileName]|[Target FileName]"/>
+    <Item cmd="move" Comment="移动或者重命名目标(为了代码更加安全建议使用ifmove)。" ArgCount="2" ArgComment="参数一: 源文件名|参数二: 目标文件名" ArgExample="[Source FileName]|[Target FileName]"/>
+  <Item cmd="link" Comment="对目标文件使用符号链接制作替身。" ArgCount="2" ArgComment="参数一: 源文件名|参数二: 目标文件名"  ArgExample="[Source FileName]|[Target FileName]"/>
+  <Item cmd="del" Comment="删除目标文件(包括符号链接制作的替身)。" ArgCount="1" ArgComment="参数一: 目标文件名"  ArgExample="[Target FileName]"/>
+  <Item cmd="cpfile" Comment="复制文件。" ArgCount="2" ArgComment="参数一: 源文件名|参数二: 目标文件名"  ArgExample="[Source FileName]|[Target FileName]"/>
+  <Item cmd="ini" Comment="根据所给出的值写入配置文件。" ArgCount="2" ArgComment="参数一: 配置组|参数二: 配置项|参数三: 值|参数四: 配置文件名"  ArgExample="[Configrue Group]|[Configrue Index]|[Configure Value]|[Scource File]"/>
+  <Item cmd="inir" Comment="读入配置文件。如果取出的值符合预设值则向引擎内部传递一个表示为真的参数。" ArgCount="2" ArgComment="参数一: 配置组|参数二: 配置项|参数三: 值|参数四: 配置文件名"  ArgExample="[Configrue Group]|[Configrue Index]|[Configure Value]|[Scource File]"/>
+  </Command>
+</default>
