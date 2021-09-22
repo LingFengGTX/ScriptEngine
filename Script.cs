@@ -143,7 +143,7 @@ namespace ScriptEngine
             {
                 File.mkLink(Value, Values);
 
-            } else if (cmd=="ifmove") {
+            } else if (cmd == "ifmove") {
                 if (Values.Count() != 2)
                 {
                     return;
@@ -157,7 +157,7 @@ namespace ScriptEngine
                             }
                             else {
                                 return;
-                            } 
+                            }
                         }; break;
                     case 1: {
                             if (!System.IO.File.Exists(Values[1]))
@@ -183,6 +183,8 @@ namespace ScriptEngine
                     case 1: { System.IO.File.Move(Values[0], Values[1]); }; break;
                     default: { return; }
                 }
+            } else if (cmd == "makedir") {
+                Directory.MakeDir(Values);
             }
             else if (cmd == "del")
             {
