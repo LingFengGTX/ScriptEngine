@@ -8,7 +8,7 @@ namespace ScriptEngine
 {
     public class Script
     {
-        private static string RegString = @"(\S+) : {([\s\S]+?)}";
+        private static string RegString = @"(\S+) : {([\s\S]+?)}"; //脚本匹配原则
         private static Dictionary<string, string> ColoMum = new Dictionary<string, string>();
         private static string[] Values = null;
         
